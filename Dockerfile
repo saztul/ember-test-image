@@ -2,10 +2,10 @@ FROM node:6
 
 MAINTAINER Lutz Selke <ls@hfci.de>
 
-RUN echo 'deb http://ftp.debian.org/debian jessie-backports main' >> /etc/apt/sources.list && \
-    apt-get update -y && \
-    apt-get -t jessie-backports install -y phantomjs
-
-RUN npm cache clean && \
+RUN apt-get update -y && \
+    apt-get install -y fontconfig libfontconfig1 libfontconfig1-dev && \
+    export NODE_PATH=/usr/local/lib/node_modules/ && \
+    npm cache clean && \
+    npm install -g phantomjs-prebuilt && \
     npm install -g bower && \
     npm install -g ember-cli@2.13.1
