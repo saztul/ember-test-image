@@ -13,3 +13,5 @@ RUN apt-get update -y && \
     sh -c 'echo "deb http://dl.google.com/linux/chrome/deb/ stable main" >> /etc/apt/sources.list.d/google.list' && \
     apt-get update -y && \
     apt-get install -y google-chrome-stable
+
+USER node
