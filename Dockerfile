@@ -9,3 +9,5 @@ RUN apt-get update -y && \
     npm install -g phantomjs-prebuilt && \
     npm install -g bower && \
     npm install -g ember-cli@2.13.1
+
+USER node
